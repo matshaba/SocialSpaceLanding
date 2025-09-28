@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS - The World Awaits | Discover Your Real World</title>
+    <meta name="description" content="Connect with real people sharing real moments in your area. SS breaks down social barriers - no friend requests, no phone numbers needed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Modern color palette 2025 */
+            --primary: #FF5733;
+            --secondary: #4ade80;
+            --tertiary: #facc15;
+            --quaternary: #2dd4bf;
+            --dark-bg: #000000;
+            --dark-card: #0a0a0a;
+            --dark-border: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --gradient-primary: linear-gradient(135deg, #FF5733 0%, #facc15 50%, #4ade80 100%);
+            --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            --blur-bg: rgba(10, 10, 10, 0.8);
+            --glow-primary: 0 0 32px rgba(255, 87, 51, 0.3);
+            --glow-secondary: 0 0 32px rgba(74, 222, 128, 0.3);
+            
+            /* 8pt Spacing Grid System */
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-7: 56px;
+            --space-8: 64px;
+            --space-10: 80px;
+            --space-12: 96px;
+            --space-16: 128px;
+            --space-20: 160px;
+            --space-24: 192px;
+            
+            /* Modern Typography Scale */
+            --text-xs: 0.75rem;    /* 12px */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px desktop, 18px mobile */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            --text-5xl: 3rem;      /* 48px */
+            --text-6xl: 3.75rem;   /* 60px */
+            --text-7xl: 4.5rem;    /* 72px */
+            
+            /* Touch-friendly sizing */
+            --touch-target-min: 44px;
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            --border-radius-full: 9999px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Modern responsive typography */
+        html {
+            font-size: 18px; /* Mobile-first: 18px base */
+            scroll-behavior: smooth;
+        }
+        
+        @media (min-width: 768px) {
+            html {
+                font-size: 16px; /* Desktop: 16px base */
+            }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-feature-settings: 'kern' 1, 'liga' 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-3);
+        }
+        
+        /* Modern header with 8pt grid */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--space-10); /* 80px */
+            padding: 0 var(--space-4);
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: var(--space-3);
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            box-shadow: var(--glow-primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-5);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--border-radius-sm);
+            min-height: var(--touch-target-min);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-nav {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            color: white;
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--border-radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            box-shadow: var(--glow-primary);
+            min-height: var(--touch-target-min);
+            display: flex;
+            align-items: center;
+        }
+        
+        .cta-nav:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 87, 51, 0.4);
+        }
+        
+        /* Hero Section with improved spacing */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: var(--space-12);
+            background: radial-gradient(ellipse at center, rgba(255, 87, 51, 0.1) 0%, transparent 70%),
+                        radial-gradient(ellipse at 80% 20%, rgba(74, 222, 128, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 20% 80%, rgba(250, 204, 21, 0.1) 0%, transparent 50%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.02"/></svg>');
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-10);
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, var(--text-7xl));
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 50%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text .subtitle {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-5);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .value-prop {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-prop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+        }
+        
+        .value-prop h3 {
+            color: var(--primary);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .value-prop p {
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: var(--space-3);
+        }
+        
+        .app-store-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            text-decoration: none;
+        }
+        
+        .app-store-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .store-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--border-radius-md);
+            min-width: 180px;
+            min-height: var(--touch-target-min);
+            transition: all 0.3s ease;
+        }
+        
+        .ios-badge {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            border: 1px solid #333;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ios-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .ios-badge:hover::before {
+            left: 100%;
+        }
+        
+        .android-badge {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            border: 1px solid #333;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .android-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .android-badge:hover::before {
+            left: 100%;
+        }
+        
+        .badge-icon {
+            font-size: var(--text-2xl);
+            flex-shrink: 0;
+        }
+        
+        .badge-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        
+        .badge-subtitle {
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            margin-bottom: 2px;
+        }
+        
+        .badge-title {
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            color: white;
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--border-radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            box-shadow: var(--glow-primary);
+            position: relative;
+            overflow: hidden;
+            min-height: var(--touch-target-min);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 16px 50px rgba(255, 87, 51, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: var(--space-3) var(--space-5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            min-height: var(--touch-target-min);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(255, 87, 51, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--glow-primary);
+        }
+        
+        /* Hero Visual - Enhanced mobile */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .phone-container {
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border-radius: var(--space-5);
+            padding: var(--space-3);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .phone-mockup:hover {
+            transform: rotateY(-10deg) rotateX(2deg) scale(1.05);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotateY(-15deg) rotateX(5deg) translateY(0px); }
+            50% { transform: rotateY(-15deg) rotateX(5deg) translateY(-20px); }
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-bg), var(--dark-card));
+            border-radius: var(--space-4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .screen-content {
+            position: absolute;
+            top: var(--space-4);
+            left: var(--space-3);
+            right: var(--space-3);
+            bottom: var(--space-4);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        .status-card {
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            border-radius: var(--border-radius-md);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .status-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--secondary), var(--quaternary));
+            animation-delay: 0.5s;
+        }
+        
+        .status-card:nth-child(3) {
+            background: linear-gradient(135deg, var(--quaternary), var(--primary));
+            animation-delay: 1s;
+        }
+        
+        .status-card:nth-child(4) {
+            background: linear-gradient(135deg, var(--tertiary), var(--secondary));
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: var(--space-16) 0;
+            position: relative;
+        }
+        
+        .features h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, var(--text-6xl));
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-10);
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .features-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .main-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-10);
+            align-items: center;
+            margin-bottom: var(--space-10);
+        }
+        
+        .feature-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            color: var(--text-primary);
+        }
+        
+        .feature-content p {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-5);
+        }
+        
+        .feature-stats {
+            display: flex;
+            gap: var(--space-5);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-1);
+        }
+        
+        .stat-label {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-4);
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-4);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 87, 51, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), var(--glow-primary);
+        }
+        
+        .feature-card .card-icon {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-3);
+            display: block;
+        }
+        
+        .feature-card h4 {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+            color: var(--text-primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Location Badge */
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            background: linear-gradient(135deg, var(--secondary), var(--quaternary));
+            color: white;
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-5);
+            box-shadow: var(--glow-secondary);
+        }
+        
+        /* Privacy Section */
+        .privacy {
+            padding: var(--space-16) 0;
+            background: linear-gradient(135deg, rgba(255, 87, 51, 0.05), rgba(74, 222, 128, 0.05));
+            position: relative;
+        }
+        
+        .privacy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-10);
+            align-items: center;
+        }
+        
+        .privacy h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, var(--text-6xl));
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(135deg, var(--text-primary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .privacy-features {
+            list-style: none;
+            margin-top: var(--space-4);
+        }
+        
+        .privacy-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .privacy-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-check {
+            width: var(--space-3);
+            height: var(--space-3);
+            background: linear-gradient(135deg, var(--secondary), var(--quaternary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: var(--text-sm);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: var(--space-16) 0;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(255, 87, 51, 0.1), transparent);
+        }
+        
+        .final-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, var(--text-6xl));
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .final-cta p {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-6);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Email Waitlist */
+        .waitlist-section {
+            margin-top: var(--space-8);
+            padding: var(--space-5);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(20px);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .waitlist-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            text-align: center;
+        }
+        
+        .waitlist-section p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-3);
+            text-align: center;
+            font-size: var(--text-base);
+        }
+        
+        .email-signup {
+            display: flex;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: var(--space-2) var(--space-3);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-full);
+            color: var(--text-primary);
+            font-size: var(--text-base);
+            outline: none;
+            transition: all 0.3s ease;
+            min-height: var(--touch-target-min);
+        }
+        
+        .email-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .email-input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.1);
+        }
+        
+        .signup-btn {
+            padding: var(--space-2) var(--space-3);
+            background: linear-gradient(135deg, var(--primary), var(--tertiary));
+            border: none;
+            border-radius: var(--border-radius-full);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            min-height: var(--touch-target-min);
+        }
+        
+        .signup-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .signup-btn:hover::before {
+            left: 100%;
+        }
+        
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 87, 51, 0.4);
+        }
+        
+        .waitlist-message {
+            text-align: center;
+            padding: var(--space-2);
+            border-radius: var(--border-radius-md);
+            font-size: var(--text-sm);
+        }
+        
+        .waitlist-message.success {
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+        
+        .waitlist-message.error {
+            background: rgba(255, 87, 51, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(255, 87, 51, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--space-8) 0 var(--space-4);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-5);
+            margin-bottom: var(--space-5);
+        }
+        
+        .footer-section h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--space-1);
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: var(--space-1) 0;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: var(--space-4);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        /* Mobile-first responsive design */
+        @media (max-width: 767px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-5);
+                text-align: center;
+            }
+            
+            .privacy-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-5);
+            }
+            
+            .main-feature {
+                grid-template-columns: 1fr;
+                gap: var(--space-5);
+                text-align: center;
+            }
+            
+            .feature-stats {
+                justify-content: center;
+                gap: var(--space-3);
+            }
+            
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .store-badge {
+                min-width: 160px;
+                min-height: var(--touch-target-min);
+                padding: var(--space-2);
+            }
+            
+            .badge-subtitle {
+                font-size: var(--text-xs);
+            }
+            
+            .badge-title {
+                font-size: var(--text-sm);
+            }
+            
+            .waitlist-section {
+                margin-top: var(--space-5);
+                padding: var(--space-3);
+            }
+            
+            .email-signup {
+                flex-direction: column;
+                gap: var(--space-2);
+            }
+            
+            .email-input {
+                padding: var(--space-2);
+            }
+            
+            .signup-btn {
+                padding: var(--space-2);
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+        
+        /* Focus states for accessibility */
+        *:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">SS - SocialSpace</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+            <a href="#download" class="cta-nav">Join SS</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="location-badge">
+                        📍 Now Live in South Africa
+                    </div>
+                    <h1>The World Awaits</h1>
+                    <p class="subtitle">Discover authentic moments happening around you, right now</p>
+                    
+                    <div class="value-prop">
+                        <h3>Beyond Your Contact List</h3>
+                        <p>SS doesn't ask who you used to know, but who you want to know. Connections form organically around shared Statuses in your area, where friendships naturally develop and you vibe with who you want to vibe with</p>
+						<p>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
+                            <div class="store-badge ios-badge">
+                                <div class="badge-icon">📱</div>
+                                <div class="badge-text">
+                                    <div class="badge-subtitle">Download on the</div>
+                                    <div class="badge-title">App Store</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="app-store-btn" aria-label="Download SS on Google Play">
+                            <div class="store-badge android-badge">
+                                <div class="badge-icon">🤖</div>
+                                <div class="badge-text">
+                                    <div class="badge-subtitle">GET IT ON</div>
+                                    <div class="badge-title">Google Play</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div style="margin-top: var(--space-3);">
+                        <a href="#features" class="btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="phone-container">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <div class="screen-content">
+                                    <div class="status-card"></div>
+                                    <div class="status-card"></div>
+                                    <div class="status-card"></div>
+                                    <div class="status-card"></div>
+                                    <div class="status-card"></div>
+                                    <div class="status-card"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Social Discovery, Reimagined</h2>
+            
+            <div class="features-showcase">
+                <!-- Main Feature -->
+                <div class="main-feature">
+                    <div class="feature-visual">
+                        <div class="phone-mockup" style="width: 280px; height: 560px; transform: none; animation: none;">
+                            <div class="phone-screen">
+                                <div style="position: absolute; top: var(--space-3); left: var(--space-3); right: var(--space-3); bottom: var(--space-3);">
+                                    <!-- Status Grid Simulation -->
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-1); height: 100%;">
+                                        <div style="background: linear-gradient(135deg, var(--primary), var(--tertiary)); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Tzaneen</div>
+                                        </div>
+                                        <div style="background: linear-gradient(135deg, var(--secondary), var(--quaternary)); border-radius: var(--border-radius-md); position: relative;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Johannesburg</div>
+                                        </div>
+                                        <div style="background: linear-gradient(135deg, var(--quaternary), var(--primary)); border-radius: var(--border-radius-md); position: relative;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Durban</div>
+                                        </div>
+                                        <div style="background: linear-gradient(135deg, var(--tertiary), var(--secondary)); border-radius: var(--border-radius-md); position: relative;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Pretoria</div>
+                                        </div>
+                                        <div style="background: linear-gradient(135deg, var(--primary), var(--quaternary)); border-radius: var(--border-radius-md); position: relative;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Polokwane</div>
+                                        </div>
+                                        <div style="background: linear-gradient(135deg, var(--secondary), var(--primary)); border-radius: var(--border-radius-md); position: relative;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Cape Town</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Discover Your Neighborhood</h3>
+                        <p>See authentic moments from real people around you. From street art in Cape Town to markets in Johannesburg - discover what's happening in your radius without needing anyone's phone number.</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <div class="stat-number">500km</div>
+                                <div class="stat-label">Discovery Radius</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Real-time</div>
+                                <div class="stat-label">Updates</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Zero</div>
+                                <div class="stat-label">Friend Requests</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Cards Row -->
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="card-icon">⚡</div>
+                        <h4>Ephemeral Stories</h4>
+                        <p>Share moments that disappear automatically. No permanent social pressure, just authentic expression.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">🎥</div>
+                        <h4>Rich Media</h4>
+                        <p>Photos, videos, voice notes, or text. Express yourself in whatever format captures your moment best.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">🔒</div>
+                        <h4>Military-Grade Privacy</h4>
+                        <p>Your exact location stays private while you discover content around you. AI-powered protection built in.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy" id="privacy">
+        <div class="container">
+            <div class="privacy-content">
+                <div>
+                    <h2>Privacy That Actually Works</h2>
+                    <p class="subtitle">Built with military-grade privacy protection that keeps you safe while discovering your world.</p>
+                    
+                    <ul class="privacy-features">
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>AI-powered differential privacy engine</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Your exact location stays completely private</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Quantum-resistant encryption protocols</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Zero-knowledge proof systems</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Anti-triangulation protection</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>POPIA & GDPR compliant</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-visual">
+                    <div class="phone-mockup" style="transform: rotateY(15deg) rotateX(-5deg);">
+                        <div class="phone-screen">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <div style="font-size: var(--text-5xl); margin-bottom: var(--space-2);">🔒</div>
+                                <div style="color: var(--secondary); font-weight: 600;">Military-Grade<br>Protection</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="download">
+        <div class="container">
+            <h2>Ready to Discover?</h2>
+            <p>Join thousands of South Africans already exploring their world through SS. Start discovering authentic moments around you.</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
+                    <div class="store-badge ios-badge">
+                        <div class="badge-icon">📱</div>
+                        <div class="badge-text">
+                            <div class="badge-subtitle">Download on the</div>
+                            <div class="badge-title">App Store</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="app-store-btn" aria-label="Download SS on Google Play">
+                    <div class="store-badge android-badge">
+                        <div class="badge-icon">🤖</div>
+                        <div class="badge-text">
+                            <div class="badge-subtitle">GET IT ON</div>
+                            <div class="badge-title">Google Play</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div style="margin-top: var(--space-5); color: var(--text-secondary); font-size: var(--text-sm);">
+                Currently available in South Africa • Expanding globally soon
+            </div>
+            
+            <!-- Email Waitlist -->
+            <div class="waitlist-section">
+                <h3>Outside South Africa?</h3>
+                <p>Join our waitlist to be notified when SS launches in your region</p>
+                <div class="email-signup">
+                    <input type="email" placeholder="Enter your email address" class="email-input" id="waitlistEmail" aria-label="Email address for waitlist">
+                    <button type="button" class="signup-btn" onclick="joinWaitlist()" aria-label="Join waitlist">Join Waitlist</button>
+                </div>
+                <div class="waitlist-message" id="waitlistMessage" style="display: none;" role="alert"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SS - Social Space</h3>
+                    <ul>
+                        <li><a href="#home">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#privacy">Privacy</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Report a Problem</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Data Protection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HumanSpace. All rights reserved. Made in South Africa 🇿🇦</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modern JavaScript with performance optimizations
+        
+        // Smooth scroll with improved performance
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Optimized header background on scroll
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+        
+        const updateHeader = () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+            
+            lastScrollY = scrollY;
+        };
+        
+        // Throttled scroll event
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateHeader();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards with staggered animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // Enhanced particle system
+        const createParticle = () => {
+            if (Math.random() > 0.3) return; // Reduce frequency
+            
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: var(--primary);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 999;
+                opacity: 0.3;
+            `;
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 0.3 },
+                { transform: 'translateY(-100px)', opacity: 0 }
+            ], {
+                duration: 3000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        };
+
+        // Throttled particle creation
+        setInterval(createParticle, 3000);
+        
+        // Enhanced waitlist signup function
+        function joinWaitlist() {
+            const emailInput = document.getElementById('waitlistEmail');
+            const messageDiv = document.getElementById('waitlistMessage');
+            const email = emailInput.value.trim();
+            
+            // Enhanced email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!email) {
+                showMessage('Please enter your email address', 'error');
+                return;
+            }
+            
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Enhanced button state management
+            const button = document.querySelector('.signup-btn');
+            const originalText = button.textContent;
+            button.textContent = 'Joining...';
+            button.disabled = true;
+            button.style.opacity = '0.7';
+            
+            // Simulate API call with realistic delay
+            setTimeout(() => {
+                // Here you would typically send to your backend
+                console.log('Email submitted to waitlist:', email);
+                
+                showMessage('🎉 You\'re on the list! We\'ll notify you when SS launches in your region.', 'success');
+                emailInput.value = '';
+                button.textContent = originalText;
+                button.disabled = false;
+                button.style.opacity = '1';
+                
+                // Track conversion (optional)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                        'value': 1.0,
+                        'currency': 'USD'
+                    });
+                }
+            }, 1200);
+        }
+        
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('waitlistMessage');
+            messageDiv.textContent = text;
+            messageDiv.className = `waitlist-message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            // Auto-hide success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.opacity = '0';
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                        messageDiv.style.opacity = '1';
+                    }, 300);
+                }, 5000);
+            }
+        }
+        
+        // Enhanced Enter key support
+        document.getElementById('waitlistEmail').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                joinWaitlist();
+            }
+        });
+        
+        // Accessibility improvements
+        document.addEventListener('keydown', function(e) {
+            // Skip to main content with keyboard
+            if (e.key === 'Tab' && !document.querySelector(':focus')) {
+                const firstFocusable = document.querySelector('a, button, input, [tabindex]:not([tabindex="-1"])');
+                if (firstFocusable) {
+                    firstFocusable.focus();
+                }
+            }
+        });
+        
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData.loadEventEnd - perfData.loadEventStart > 3000) {
+                        console.warn('Page load time exceeded 3 seconds');
+                    }
+                }, 0);
+            });
+        }
+    </script>
+</body>
+</html>
