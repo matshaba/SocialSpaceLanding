@@ -10,10 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* IMAGE CONSTANTS - Replace with your own image URLs */
+            /* BUTTON IMAGE CONSTANTS - Replace with your own logo URLs */
             --img-ios: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>');
             --img-android: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.523 15.341c-.82 0-1.478.66-1.478 1.48s.658 1.48 1.478 1.48c.82 0 1.478-.66 1.478-1.48s-.658-1.48-1.478-1.48zm-11.046 0c-.82 0-1.478.66-1.478 1.48s.658 1.48 1.478 1.48c.82 0 1.478-.66 1.478-1.48s-.658-1.48-1.478-1.48zm2.444-7.721-1.22-2.146c-.09-.153-.03-.35.122-.44.154-.09.35-.03.442.122l1.236 2.175c1.43-.647 3.03-1.01 4.714-1.01 1.682 0 3.282.363 4.713 1.01l1.236-2.175c.092-.152.288-.212.442-.122.152.09.212.287.122.44l-1.22 2.146C19.98 9.49 21.5 12.036 21.5 15v.003H2.5V15c0-2.964 1.52-5.51 3.421-7.38z"/></svg>');
             --img-whatsapp: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>');
+            
+            /* CITY IMAGE CONSTANTS - Replace with your own city images (6 images) */
+            --city-img-1: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=400');  /* Tzaneen */
+            --city-img-2: url('https://images.unsplash.com/photo-1577948000111-9c970dfe3743?w=400');  /* Johannesburg */
+            --city-img-3: url('https://images.unsplash.com/photo-1591608971362-f08b2a75731a?w=400');  /* Durban */
+            --city-img-4: url('https://images.unsplash.com/photo-1591958911259-bee2173bdec4?w=400');  /* Pretoria */
+            --city-img-5: url('https://images.unsplash.com/photo-1563656353898-febc9270a0f5?w=400');  /* Polokwane */
+            --city-img-6: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=400');  /* Cape Town */
             
             /* Modern color palette 2025 */
             --primary: #FF5733;
@@ -355,8 +363,6 @@
         
         @media (min-width: 1024px) {
             .hero-content {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-10);
                 text-align: left;
             }
         }
@@ -470,36 +476,35 @@
         .cta-buttons {
             display: flex;
             gap: var(--space-2);
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
             margin-bottom: var(--space-3);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         @media (min-width: 768px) {
             .cta-buttons {
                 gap: var(--space-3);
+                max-width: 450px;
             }
         }
         
         @media (min-width: 1024px) {
             .cta-buttons {
-                justify-content: flex-start;
+                margin-left: 0;
+                margin-right: 0;
             }
         }
         
         .app-store-btn {
-            flex: 1;
-            min-width: 0;
+            flex: 0 1 auto;
+            width: 100%;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: var(--border-radius-md);
             overflow: hidden;
             text-decoration: none;
-        }
-        
-        @media (min-width: 768px) {
-            .app-store-btn {
-                flex: 0 1 auto;
-            }
         }
         
         .app-store-btn:hover {
@@ -856,29 +861,6 @@
                 bottom: var(--space-4);
                 gap: var(--space-2);
             }
-        }
-        
-        .status-card {
-            background: linear-gradient(135deg, var(--primary), var(--tertiary));
-            border-radius: var(--border-radius-md);
-            position: relative;
-            overflow: hidden;
-            animation: pulse 3s ease-in-out infinite;
-        }
-        
-        .status-card:nth-child(2) {
-            background: linear-gradient(135deg, var(--secondary), var(--quaternary));
-            animation-delay: 0.5s;
-        }
-        
-        .status-card:nth-child(3) {
-            background: linear-gradient(135deg, var(--quaternary), var(--primary));
-            animation-delay: 1s;
-        }
-        
-        .status-card:nth-child(4) {
-            background: linear-gradient(135deg, var(--tertiary), var(--secondary));
-            animation-delay: 1.5s;
         }
         
         @keyframes pulse {
@@ -1447,15 +1429,6 @@
                     </div>
                     
                     <div class="cta-buttons">
-                        <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
-                            <div class="store-badge ios-badge">
-                                <div class="badge-icon ios"></div>
-                                <div class="badge-text">
-                                    <div class="badge-subtitle">Download on the</div>
-                                    <div class="badge-title">App Store</div>
-                                </div>
-                            </div>
-                        </a>
                         <a href="#" class="app-store-btn" aria-label="Download SS on Google Play">
                             <div class="store-badge android-badge">
                                 <div class="badge-icon android"></div>
@@ -1474,26 +1447,18 @@
                                 </div>
                             </div>
                         </a>
+                        <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
+                            <div class="store-badge ios-badge">
+                                <div class="badge-icon ios"></div>
+                                <div class="badge-text">
+                                    <div class="badge-subtitle">Download on the</div>
+                                    <div class="badge-title">App Store</div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                     <div style="margin-top: var(--space-3);">
                         <a href="#features" class="btn-secondary">Explore Features</a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="phone-container">
-                        <div class="phone-mockup">
-                            <div class="phone-screen">
-                                <div class="screen-content">
-                                    <div class="status-card"></div>
-                                    <div class="status-card"></div>
-                                    <div class="status-card"></div>
-                                    <div class="status-card"></div>
-                                    <div class="status-card"></div>
-                                    <div class="status-card"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1513,23 +1478,23 @@
                             <div class="phone-screen">
                                 <div style="position: absolute; top: var(--space-3); left: var(--space-3); right: var(--space-3); bottom: var(--space-3);">
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-1); height: 100%;">
-                                        <div style="background: linear-gradient(135deg, var(--primary), var(--tertiary)); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Tzaneen</div>
+                                        <div style="background: linear-gradient(135deg, #FF5733, #facc15); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Tzaneen</div>
                                         </div>
-                                        <div style="background: linear-gradient(135deg, var(--secondary), var(--quaternary)); border-radius: var(--border-radius-md); position: relative;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Johannesburg</div>
+                                        <div style="background: linear-gradient(135deg, #4ade80, #2dd4bf); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Johannesburg</div>
                                         </div>
-                                        <div style="background: linear-gradient(135deg, var(--quaternary), var(--primary)); border-radius: var(--border-radius-md); position: relative;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Durban</div>
+                                        <div style="background: linear-gradient(135deg, #2dd4bf, #FF5733); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Durban</div>
                                         </div>
-                                        <div style="background: linear-gradient(135deg, var(--tertiary), var(--secondary)); border-radius: var(--border-radius-md); position: relative;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Pretoria</div>
+                                        <div style="background: linear-gradient(135deg, #facc15, #4ade80); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Pretoria</div>
                                         </div>
-                                        <div style="background: linear-gradient(135deg, var(--primary), var(--quaternary)); border-radius: var(--border-radius-md); position: relative;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Polokwane</div>
+                                        <div style="background: linear-gradient(135deg, #FF5733, #2dd4bf); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Polokwane</div>
                                         </div>
-                                        <div style="background: linear-gradient(135deg, var(--secondary), var(--primary)); border-radius: var(--border-radius-md); position: relative;">
-                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600;">Cape Town</div>
+                                        <div style="background: linear-gradient(135deg, #4ade80, #FF5733); border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+                                            <div style="position: absolute; bottom: var(--space-2); left: var(--space-2); color: white; font-size: var(--text-xs); font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Cape Town</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1635,15 +1600,6 @@
             <p>Join thousands of South Africans already exploring their world through SS. Start discovering authentic moments around you.</p>
             
             <div class="cta-buttons">
-                <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
-                    <div class="store-badge ios-badge">
-                        <div class="badge-icon ios"></div>
-                        <div class="badge-text">
-                            <div class="badge-subtitle">Download on the</div>
-                            <div class="badge-title">App Store</div>
-                        </div>
-                    </div>
-                </a>
                 <a href="#" class="app-store-btn" aria-label="Download SS on Google Play">
                     <div class="store-badge android-badge">
                         <div class="badge-icon android"></div>
@@ -1659,6 +1615,15 @@
                         <div class="badge-text">
                             <div class="badge-subtitle">JOIN US ON</div>
                             <div class="badge-title">WhatsApp</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="app-store-btn" aria-label="Download SS on App Store">
+                    <div class="store-badge ios-badge">
+                        <div class="badge-icon ios"></div>
+                        <div class="badge-text">
+                            <div class="badge-subtitle">Download on the</div>
+                            <div class="badge-title">App Store</div>
                         </div>
                     </div>
                 </a>
@@ -1903,4 +1868,3 @@
     </script>
 </body>
 </html>
-
